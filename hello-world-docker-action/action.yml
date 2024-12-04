@@ -1,1 +1,18 @@
+name: Hello World
+description: gh training
+author: CM
+
+inputs:
+  who-to-greet:
+    default: World
+    required: true
+    description: Who to greet
+outputs:
+  current-time:
+    description: Time
+runs:
+  using: Docker
+  image: Dockerfile
+  env: 
+    INPUT: ${{inputs.who-to-greet}}
 
