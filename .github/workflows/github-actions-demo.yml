@@ -1,1 +1,22 @@
+name: GitHub Actions Demo
+on: 
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  schedule:
+    - cron: 6 15 * * SUN
+  workflow_dispatch:
+jobs: 
+  Build:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo "event: ${{github.event_name}}"
+          echo "branch: ${{github.ref}}"
+      - uses: actions/checkout@v3.3.0
+      - run: |
+          echo "files: $tree"
+      
+      
 
